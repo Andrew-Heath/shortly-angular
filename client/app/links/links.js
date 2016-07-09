@@ -1,6 +1,6 @@
 angular.module('shortly.links', [])
 
-.controller('LinksController', function ($scope, Links, Auth) {
+.controller('LinksController', function ($scope, Links) {
   $scope.data = { links: [] };
 
   var getAllLinks = function() {
@@ -9,11 +9,5 @@ angular.module('shortly.links', [])
     });   
   };
 
-  if (Auth.isAuth()) {
-    getAllLinks();
-  } else {  
-    console.log('Not authorized');
-    // redirect to login?
-    Auth.signout();
-  }
+  getAllLinks();
 });
