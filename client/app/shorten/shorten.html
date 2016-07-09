@@ -1,8 +1,8 @@
 <div id='container' ng-controller='ShortenController'>
   <!-- Your code here -->
   <h2>Shorten Link</h2>
-  <form name="shortenLink">
-    <input type='text'ng-model='newLink'>
-    <button ng-click="addLink()">Shorten Link</button>
+  <form novalidate name="shortenLink">
+    <input type='url' ng-model='newLink' name='newLink' />
+    <input type='submit' ng-click="addLink(shortenLink.$valid)" value='Shorten Link'/>
   </form>
 </div>
