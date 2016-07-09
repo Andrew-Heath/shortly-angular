@@ -20,7 +20,7 @@ angular.module('shortly.services', [])
     return $http({
       method: 'POST',
       url: '/api/links',
-      data: linkToAdd
+      data: JSON.stringify(linkToAdd)
     })
     .then(function(resp) {
       // return server response
