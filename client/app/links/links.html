@@ -1,4 +1,19 @@
 <div id='container'>
   <!-- Your html here -->
-  {{ data.links }}
+  <table class='links'>
+    <thead>
+      <th></th>
+    </thead>
+    <tbody>
+      <tr class='link' ng-repeat="link in data.links track by $index">
+        <td><img src='/images/redirect_icon.png'/></td>
+        <td class='info' >
+          <span class='title'>{{ link.title }} </span><br />
+          <span class='original'>{{ link.url }}</span><br />
+          <span class=''><a href='{{ link.baseUrl }}/{{ link.code }}'>{{ link.baseUrl }}/{{ link.code }}</a></span>
+        </td>
+        <td class='visits'><span class='count'>{{ link.visits }}</span>Visits</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
