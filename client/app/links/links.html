@@ -5,7 +5,7 @@
       <th></th>
     </thead>
     <tbody>
-      <tr class='link' ng-repeat="link in data.links track by $index">
+      <tr class='link' ng-repeat="link in data.links | orderBy:'-visits'">
         <td><img src='/images/redirect_icon.png'/></td>
         <td class='info' >
           <span class='title'>{{ link.title }} </span><br />
