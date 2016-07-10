@@ -1,11 +1,12 @@
 <div id='container'>
-  <!-- Your html here -->
+  <input type='text' value='filter links' ng-model='Links' />
+
   <table class='links'>
     <thead>
       <th></th>
     </thead>
     <tbody>
-      <tr class='link' ng-repeat="link in data.links | orderBy:'-visits'">
+      <tr class='link' ng-repeat="link in data.links | filter:Links | orderBy:'-visits'">
         <td><img src='/images/redirect_icon.png'/></td>
         <td class='info' >
           <span class='title'>{{ link.title }} </span><br />
